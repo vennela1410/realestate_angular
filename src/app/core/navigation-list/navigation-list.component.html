@@ -1,0 +1,39 @@
+<mat-nav-list>
+    <a mat-list-item routerLink="/home" (click)="onSidenavClose()">
+        <mat-icon>home</mat-icon> <span class="nav-caption">Home</span>
+    </a>
+    <!-- <a mat-list-item routerLink="/owner" (click)="onSidenavClose()">
+        <mat-icon>assignment_ind</mat-icon> <span class="nav-caption">Owner Actions</span>   
+    </a>
+    <a mat-list-item routerLink="#" (click)="onSidenavClose()">
+        <mat-icon>account_balance</mat-icon><span class="nav-caption">Account Actions</span>
+    </a> -->
+    <a mat-list-item routerLink="/addNewHome" (click)="onSidenavClose()">
+        <mat-icon>home</mat-icon> <span class="nav-caption">Add a Listing</span>
+    </a>
+    <a mat-list-item routerLink="/updateHome" (click)="onSidenavClose()">
+        <mat-icon>home</mat-icon> <span class="nav-caption">Rent a House</span>
+    </a>
+    <a mat-list-item routerLink="/addNewAgent" (click)="onSidenavClose()">
+        <mat-icon>home</mat-icon> <span class="nav-caption">Finance a House</span>
+    </a>
+    <a mat-list-item routerLink="/addHomeOwner" (click)="onSidenavClose()">
+        <mat-icon>person_add</mat-icon> <span class="nav-caption">Agent Finder</span>
+    </a>
+
+    <a mat-list-item routerLink="/updateHomeOwner" (click)="onSidenavClose()">
+        <mat-icon>home</mat-icon> <span class="nav-caption">My Saved History</span>
+    </a>
+
+    <a mat-list-item routerLink="/updateHomeOwner" (click)="onSidenavClose()">
+<!--        <mat-icon>home</mat-icon> <span class="nav-caption">Add a listing</span>-->
+    </a>
+    <!-- <mat-list-item [matMenuTriggerFor]="menu">
+        <mat-icon>unfold_more</mat-icon>
+        <a matline style="color: black;">Example</a>
+    </mat-list-item>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="onSidenavClose()">View profile</button>
+      <button mat-menu-item (click)="onSidenavClose()">Add contact</button>
+    </mat-menu> -->
+  </mat-nav-list>

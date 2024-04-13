@@ -1,0 +1,70 @@
+<div class="perfect-centering">
+    <form class="example-form">
+
+        <mat-card class="example-card">
+            <mat-card-header>
+                <mat-card-title>New Agent Details</mat-card-title>
+            </mat-card-header>
+        </mat-card>
+
+        <br>
+        <table class="example-full-width" cellspacing="0">
+            <tr>
+                <td><mat-form-field class="example-full-width">
+                        <mat-label>Agent First Name</mat-label>
+                        <input matInput [(ngModel)]="newAgent.agentFirstName" [ngModelOptions]="{standalone: true}" required>
+                    </mat-form-field></td>
+                    <td><mat-form-field class="example-full-width">
+                        <mat-label>Agent Last Name</mat-label>
+                        <input matInput [(ngModel)]="newAgent.agentLastName" [ngModelOptions]="{standalone: true}" required>
+                    </mat-form-field></td>
+            </tr>
+            
+            <tr>
+                <td><mat-form-field class="example-full-width">
+                    <mat-label>Agent Contact</mat-label>
+                    <input matInput  required maxlength="14" placeholder="(000) 123 4567" [(ngModel)]="newAgent.agentContact" [ngModelOptions]="{standalone: true}">
+                </mat-form-field></td>
+            <td><mat-form-field class="example-full-width">
+                    <mat-label>Agent Email</mat-label>
+                    <input matInput  required placeholder="example@gmail.com" [(ngModel)]="newAgent.agentEmail" [ngModelOptions]="{standalone: true}">
+                </mat-form-field></td>
+            </tr>
+        </table>
+
+        <p>
+            <mat-form-field class="example-full-width">
+                <mat-label>Address</mat-label>
+                <textarea matInput required placeholder="Ex. 100 Main St"  [(ngModel)]="newAgent.agentAddress" [ngModelOptions]="{standalone: true}"></textarea>
+            </mat-form-field>
+        </p>
+
+        <table class="example-full-width" cellspacing="0">
+            <tr>
+                <td><mat-form-field class="example-full-width">
+                        <mat-label>City</mat-label>
+                        <input matInput required placeholder="Ex. San Francisco" [(ngModel)]="newAgent.city" [ngModelOptions]="{standalone: true}">
+                    </mat-form-field></td>
+                <td><mat-form-field class="example-full-width">
+                        <mat-label>State</mat-label>
+                        <input matInput required placeholder="Ex. California" [(ngModel)]="newAgent.state" [ngModelOptions]="{standalone: true}">
+                    </mat-form-field></td>
+                <td><mat-form-field class="example-full-width">
+                        <mat-label>Postal Code</mat-label>
+                        <input matInput required #postalCode maxlength="5" placeholder="Ex. 94105" value="94043" [(ngModel)]="newAgent.zipCode" [ngModelOptions]="{standalone: true}">
+                        <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
+                    </mat-form-field></td>
+            </tr>
+            <tr>
+                    <td style="padding-left: 5rem; padding-top: 3rem;">
+                        <button  mat-button style="width: 100%; background-color: #3f51b5;" (click)="addNewAgent()">Add</button>
+                    </td>
+                    <td style="padding-left: 2rem;  padding-top: 3rem;">
+                        <button mat-button style="width: 80%; background-color: gainsboro;" (click)="clearAgentDetails()">Clear</button>
+                    </td>
+            </tr>
+        </table>
+
+
+    </form>
+</div>

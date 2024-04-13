@@ -1,0 +1,60 @@
+<mat-toolbar color="primary">
+    <div fxShow="true" fxHide.lt-md fxFlex="100%" fxLayout fxLayoutGap="20px">
+        <div>
+            <button mat-icon-button (click)="onToggleSidenav()">
+                <mat-icon>menu</mat-icon>
+            </button>
+        </div>
+        <div>
+            <!-- <mat-icon>home</mat-icon> -->
+            <!-- <a routerLink="/home">Owner-Account</a> -->
+            <img mat-card-image="" src="../../../assets/house.avif" alt="Photo of a Shiba Inu"
+                style="min-height: 3rem; width: 3rem;">
+        </div>
+        <div style="align-content: flex-start;">
+            <h6>Real Estate Project</h6>
+        </div>
+
+    <!-- </div>
+    <div fxFlex="80%" fxLayout="100%" fxLayoutAlign="center" fxLayoutGap="15px"> -->
+        <!-- <form class="example-form">
+        <mat-form-field class="example-full-width">
+            <span matPrefix> </span>
+            <input type="tel" matInput placeholder="Search" name= "search" [(ngModel)]= "search">
+            <button matSuffix mat-button><mat-icon >search</mat-icon></button>
+            </mat-form-field>
+        </form> -->
+
+        <mat-form-field appearance="fill" fxFlex fxLayout fxLayoutAlign="end" fxLayoutWidth="400%">
+            <mat-label>Search</mat-label>
+            <input matInput [(ngModel)]="search" style="width: 100%;" />
+            <mat-icon matPrefix>search</mat-icon>
+        </mat-form-field>
+        
+        <!-- <div>
+            <button class="search-icon" mat-icon-button disabled>
+                <mat-icon>search</mat-icon>
+              </button>
+              <input class="search-control" type="text" placeholder="Search" [(ngModel)]="search" #searchbar> 
+              <input matInput type="text" placeholder="Search" [(ngModel)]="search" style="height: 150%; width: 100%;"/> 
+          </div> -->
+
+    </div>
+    <div fxFlex fxLayout fxLayoutAlign="end" fxLayoutGap="15px">
+        <a href="/advanced-search" mat-button>Advanced Search</a>
+        <a href="/login" mat-button>SignIn</a>
+        <a href="/login" mat-button>About</a>
+        <a href="/login" mat-button>Contact</a>
+    </div>
+
+    <!-- <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
+        <ul fxLayout fxLayoutGap="15px" class="navigation-items">
+            <li>
+                <a routerLink="/owner">Owner Actions</a>
+            </li>
+            <li>
+                <a routerLink="/account">Account Actions</a>
+            </li>
+        </ul>
+    </div> -->
+</mat-toolbar>

@@ -1,0 +1,134 @@
+<div class="perfect-centering">
+    <form class="example-form">
+
+        <mat-card class="example-card">
+            <mat-card-header>
+                <mat-card-title>
+                    <span *ngIf="existingHouse">Update House Details</span>
+                    <span *ngIf="!existingHouse">New House Entry</span></mat-card-title>
+            </mat-card-header>
+        </mat-card>
+
+        <br>
+        <table class="example-full-width" cellspacing="0">
+            <tr>
+                <td><mat-form-field class="example-full-width">
+                        <mat-label>Owner(First, Middle, Last) Name</mat-label>
+                        <input matInput [(ngModel)]="newHouse.houseOwner" [ngModelOptions]="{standalone: true}">
+                    </mat-form-field></td>
+                <td><mat-form-field class="example-full-width">
+                        <mat-label>House Type</mat-label>
+                        <input matInput [(ngModel)]="newHouse.houseType" [ngModelOptions]="{standalone: true}">
+                    </mat-form-field></td>
+                <td><mat-form-field class="example-full-width">
+                        <mat-label>House Rate</mat-label>
+                        <input matInput [(ngModel)]="newHouse.houseRate" [ngModelOptions]="{standalone: true}">
+                    </mat-form-field></td>
+                <td><mat-form-field class="example-full-width">
+                        <mat-label>No. of Floors</mat-label>
+                        <input matInput [(ngModel)]="newHouse.floors" [ngModelOptions]="{standalone: true}">
+                    </mat-form-field></td>
+                <td><mat-form-field class="example-full-width">
+                        <mat-label>Floor Space in sqft</mat-label>
+                        <input matInput [(ngModel)]="newHouse.floorSpace" [ngModelOptions]="{standalone: true}">
+                    </mat-form-field></td>
+            </tr>
+
+            <tr>
+                <td><mat-form-field class="example-full-width">
+                        <mat-label>No. of bedrooms</mat-label>
+                        <input matInput [(ngModel)]="newHouse.bedRoomCount" [ngModelOptions]="{standalone: true}">
+                    </mat-form-field></td>
+                <td><mat-form-field class="example-full-width">
+                        <mat-label>Total No. of baths</mat-label>
+                        <input matInput [(ngModel)]="newHouse.totalbaths" [ngModelOptions]="{standalone: true}">
+                    </mat-form-field></td>
+                <td><mat-form-field class="example-full-width">
+                        <mat-label>Total Area Covered in sqft</mat-label>
+                        <input matInput [(ngModel)]="newHouse.areaCovered" [ngModelOptions]="{standalone: true}">
+                    </mat-form-field></td>
+                <td><mat-form-field class="example-full-width">
+                        <mat-label>Built Year</mat-label>
+                        <input matInput [(ngModel)]="newHouse.builtYear" [ngModelOptions]="{standalone: true}">
+                    </mat-form-field></td>
+                <mat-form-field appearance="fill">
+                    <mat-label>Availability Status</mat-label>
+                    <select matNativeControl required [(ngModel)]="newHouse.availabilityStatus"
+                        [ngModelOptions]="{standalone: true}">
+                        <option value="available">Available</option>
+                        <option value="sold">Sold</option>
+                    </select>
+                </mat-form-field>
+            </tr>
+        </table>
+
+        <p>
+            <mat-form-field class="example-full-width">
+                <mat-label>House Description</mat-label>
+                <textarea matInput [(ngModel)]="newHouse.description" [ngModelOptions]="{standalone: true}"></textarea>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>Address</mat-label>
+                <textarea matInput placeholder="Ex. 100 Main St" [(ngModel)]="newHouse.address.address"
+                    [ngModelOptions]="{standalone: true}"></textarea>
+            </mat-form-field>
+        </p>
+
+        <table class="example-full-width" cellspacing="0">
+            <tr>
+                <td><mat-form-field class="example-full-width">
+                        <mat-label>County</mat-label>
+                        <input matInput placeholder="Ex. Oakland" [(ngModel)]="newHouse.address.county"
+                            [ngModelOptions]="{standalone: true}">
+                    </mat-form-field></td>
+                <td><mat-form-field class="example-full-width">
+                        <mat-label>City</mat-label>
+                        <input matInput placeholder="Ex. Farmington Hills" [(ngModel)]="newHouse.address.city"
+                            [ngModelOptions]="{standalone: true}">
+                    </mat-form-field></td>
+                <td><mat-form-field class="example-full-width">
+                        <mat-label>State</mat-label>
+                        <input matInput placeholder="Ex. Michigan" [(ngModel)]="newHouse.address.state"
+                            [ngModelOptions]="{standalone: true}">
+                    </mat-form-field></td>
+                <td><mat-form-field class="example-full-width">
+                        <mat-label>Postal Code</mat-label>
+                        <input matInput #postalCode maxlength="5" placeholder="Ex. 94105" value="94043"
+                            [(ngModel)]="newHouse.address.postalCode" [ngModelOptions]="{standalone: true}">
+                        <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
+                    </mat-form-field></td>
+                <td><mat-form-field class="example-full-width">
+                        <mat-label>Agent Id</mat-label>
+                        <input matInput placeholder="Ex. San Francisco" [(ngModel)]="newHouse.agentId"
+                            [ngModelOptions]="{standalone: true}">
+                    </mat-form-field></td>
+            </tr>
+
+            <tr>
+                <td>
+                    <div style="padding-left: 10rem;">
+                        <button mat-button style="width: 120%; background-color: #3f51b5;" (click)="addNewHouse()">
+                            <span *ngIf="existingHouse">Update</span>
+                            <span *ngIf="!existingHouse">Add</span></button>
+                    </div>
+
+                </td>
+                <div *ngIf="!existingHouse">
+                <td style="padding-left: 2rem; ">
+                    <button mat-button style="width: 50%; background-color: gainsboro;"
+                        (click)="clearHouseDetails()">Clear</button>
+                </td>
+            </div>
+            <div *ngIf="existingHouse">
+                <td style="padding-left: 2rem; ">
+                    <button mat-button style="width: 50%; background-color: gainsboro;"
+                        (click)="deleteHouseDetails()">Delete</button>
+                </td>
+            </div>
+                
+            </tr>
+        </table>
+
+
+    </form>
+</div>
