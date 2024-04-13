@@ -1,5 +1,15 @@
 # RealestateAngular
 
+**Tech Stach for run the application:**
+Angular 15
+NodeJS – version 18.14.2 or +
+
+**The client-side code can by started / run by the following instructions:**
+•	Install node modules with running command npm install in the path where package.json file exists in the source code.
+•	Then, run npm start to run the application.
+•	The application will be up and running in http://localhost:4200
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.1.
 
 ## Development server
